@@ -31,47 +31,45 @@ function render(variables = {}) {
 
   let twitterVariable = "https://twitter.com/" + `${variables.twitter}`;
   let gitHubVariable = "https://github.com/" + `${variables.github}`;
-  let linkindenVariable = "https://linkedin.com/" + `${variables.linkedin}`;
+  let linkedinVariable = "https://linkedin.com/" + `${variables.linkedin}`;
   let instagramVariable = "https://instagram.com/" + `${variables.instagram}`;
 
   // reset the website body with the new html output
   document.querySelector("#widget_content").innerHTML = `<div class="widget">
-            ${cover}
-          <img src="${variables.avatarURL}" class="photo" />
-          <h1>${variables.name === null ? "Firstname" : variables.name}
-          ${variables.lastName === null ? "Lastname" : variables.lastName}
-          </h1>
-          <h2>${variables.role === null ? "Role" : variables.role}</h2>
-          <h3>${variables.city === null ? "City" : variables.city},
-          ${variables.country === null ? "Country" : variables.country}</h3>
-          <ul ${
-            variables.socialMediaPosition === null
-              ? "position-right"
-              : variables.socialMediaPosition
-          }>
-            <li><a href=${
-              variables.twitter === null
-                ? "https://x.com/elonmusk"
-                : variables.twitter
-            } ><i class="fab fa-twitter"></i></a></li>
-            <li><a href=${
-              variables.github === null
-                ? "https://github.com/4geeksacademy"
-                : variables.github
-            } ><i class="fab fa-github"></i></a></li>
-            <li><a href=${
-              variables.linkedin === null
-                ? "https://linkedin.com/school/4geeksacademy"
-                : variables.linkedin
-            } ><i class="fab fa-linkedin"></i></a></li>
-            <li><a href=${
-              variables.instagram === null
-                ? "https://instagram.com/4geeksacademy"
-                : variables.instagram
-            } ><i class="fab fa-instagram"></i></a></li>
-          </ul>
-        </div>
-    `;
+  ${cover}
+<img src="${variables.avatarURL}" class="photo" />
+<h1>${variables.name === null ? "Firstname" : variables.name}
+${variables.lastName === null ? "Lastname" : variables.lastName}
+</h1>
+<h2>${variables.role === null ? "Role" : variables.role}</h2>
+<h3>${variables.city === null ? "City" : variables.city},
+${variables.country === null ? "Country" : variables.country}</h3>
+<ul class="${
+    variables.socialMediaPosition === null
+      ? "position-right"
+      : variables.socialMediaPosition
+  }">
+  <li><a href=${
+    variables.twitter === null ? "https://x.com/elonmusk" : twitterVariable
+  } ><i class="fab fa-twitter"></i></a></li>
+  <li><a href=${
+    variables.github === null
+      ? "https://github.com/4geeksacademy"
+      : gitHubVariable
+  } ><i class="fab fa-github"></i></a></li>
+  <li><a href=${
+    variables.linkedin === null
+      ? "https://linkedin.com/school/4geeksacademy"
+      : linkedinVariable
+  } ><i class="fab fa-linkedin"></i></a></li>
+  <li><a href=${
+    variables.instagram === null
+      ? "https://instagram.com/4geeksacademy"
+      : instagramVariable
+  } ><i class="fab fa-instagram"></i></a></li>
+</ul>
+</div>
+`;
 }
 
 /**
